@@ -40,7 +40,7 @@ def fit_classifier():
 
     classifier.fit(x_train,y_train,x_test,y_test, y_true)
 
-def create_classifier(classifier_name, input_shape, nb_classes, output_directory, verbose = False):
+def create_classifier(classifier_name, input_shape, nb_classes, output_directory, verbose = True):
     if classifier_name=='fcn': 
         from classifiers import fcn        
         return fcn.Classifier_FCN(output_directory,input_shape, nb_classes, verbose)
@@ -73,7 +73,8 @@ def create_classifier(classifier_name, input_shape, nb_classes, output_directory
 
 # change this directory for your machine
 # it should contain the archive folder containing both univariate and multivariate archives
-root_dir = '/mnt/nfs/casimir/'
+# root_dir = '/mnt/nfs/casimir/'
+root_dir = '../bandlimited-cnns/cnns/nnlib/datasets/sathya/'
 
 if sys.argv[1]=='transform_mts_to_ucr_format':
     transform_mts_to_ucr_format()
